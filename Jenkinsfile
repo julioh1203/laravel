@@ -17,7 +17,7 @@ node('php'){
     }
     
     stage('Docker Ship') {
-        sh 'docker push julioh1203/laravel:$BUILD_NUMBER'
-        sh 'docker rmi -f julioh1203/laravel:$BUILD_NUMBER'
+        sh 'docker push julioh1203/laravel:$BRANCH_NAME-$BUILD_NUMBER'
+        sh 'docker rmi -f julioh1203/laravel:$BRANCH_NAME-$BUILD_NUMBER'
     }
 }
